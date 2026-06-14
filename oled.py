@@ -1,17 +1,22 @@
-from luma.core.interface.serial import i2c
-from luma.oled.device import sh1106
+import board
+import busio
 from PIL import Image, ImageDraw
+import adafruit_ssd1306
 
-serial = i2c(port=1, address=0x3C)
-device = sh1106(serial, width=64, height=48, rotate=0)
+i2c = busio.I2C(board.SCL, board.SDA)
 
-device.clear()
+oled = adafruit_ssd1306.SSD1306_I2C(64, 48, i2c, addr=0x3C)
 
-image = Image.new("1", (64, 48), 0)
+oled.fill(0)
+oled.show()
+
+image = Image.new("1", (64, 48))
 draw = ImageDraw.Draw(image)
 
 draw.rectangle((0, 0, 63, 47), outline=255)
-draw.text((4, 4), "HELLO", fill=255)
-draw.text((4, 20), "OLED OK", fill=255)
+draw.text((2, 2), "HELLO", fill=255)
+draw.text((2, 18), "SSD1306", fill=255)
+draw.text((2, 34), "OK", fill=255)
 
-device.display(image)
+oled.image(image)
+oled.show()
