@@ -36,4 +36,4 @@ def display(number: int):
 
 
 # test
-display(1)
+display(9)
