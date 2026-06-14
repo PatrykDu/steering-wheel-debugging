@@ -43,4 +43,4 @@ def display(value):
     oled.show()
 
 
-display("P")
+display("8")
