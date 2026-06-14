@@ -6,7 +6,7 @@ import adafruit_ssd1306
 WIDTH = 64
 HEIGHT = 48
 
-VISIBLE_Y = 10
+VISIBLE_Y = 5
 VISIBLE_H = HEIGHT - VISIBLE_Y
 
 i2c = busio.I2C(board.SCL, board.SDA)
