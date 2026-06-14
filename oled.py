@@ -8,7 +8,7 @@ oled = adafruit_ssd1306.SSD1306_I2C(64, 48, i2c)
 
 font = ImageFont.truetype(
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-    52
+    64
 )
 
 def display(n):
@@ -19,7 +19,7 @@ def display(n):
     bbox = draw.textbbox((0, 0), text, font=font)
 
     x = (64 - (bbox[2] - bbox[0])) // 2
-    y = (48 - (bbox[3] - bbox[1])) // 2 - 10
+    y = (48 - (bbox[3] - bbox[1])) // 2
 
     draw.text((x, y), text, font=font, fill=255)
 
