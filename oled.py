@@ -27,4 +27,4 @@ def display(n):
     oled.show()
 
 
-display(2)
+display(8)
