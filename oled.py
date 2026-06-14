@@ -38,4 +38,4 @@ def display(n):
     oled.show()
 
 
-display(8)
+display("R")
