@@ -19,7 +19,7 @@ def display(n):
     bbox = draw.textbbox((0, 0), text, font=font)
 
     x = (64 - (bbox[2] - bbox[0])) // 2
-    y = (48 - (bbox[3] - bbox[1])) // 2
+    y = (48 - (bbox[3] - bbox[1])) // 2 - 10
 
     draw.text((x, y), text, font=font, fill=255)
 
